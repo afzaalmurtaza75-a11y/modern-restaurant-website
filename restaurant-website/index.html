@@ -8,6 +8,7 @@
     <title>Food Haven Restaurant</title>
 
     <link rel="stylesheet" href="style.css">
+    
 </head>
 <!-- ORDER POPUP -->
 
@@ -182,9 +183,18 @@
 
 <section id="menu">
 
-    <p class="section-subtitle">OUR MENU</p>
+
+    <!-- Flying Butterflies -->
+    <div class="butterfly butterfly-1">🦋</div>
+    <div class="butterfly butterfly-2">🦋</div>
+    <div class="butterfly butterfly-3">🦋</div>
+
+    
 
     <h2>Popular Dishes 🍽️</h2>
+    <p class="section-subtitle">OUR MENU</p>
+
+    
 
     <div class="menu-container">
 
@@ -206,6 +216,8 @@
             <div class="price">$8.99</div>
 
             <button class="add-cart">Add to Cart 🛒</button>
+
+            <button class="order-button">Order Now 🚀</button>
         </div>
 
 
@@ -227,6 +239,8 @@
             <div class="price">$12.99</div>
 
             <button class="add-cart">Add to Cart 🛒</button>
+            
+            <button class="order-button">Order Now 🚀</button>
         </div>
 
 
@@ -249,14 +263,467 @@
             <div class="price">$10.99</div>
 
             <button class="add-cart">Add to Cart 🛒</button>
+
+            <button class="order-button">Order Now 🚀</button>
         </div>
 
     </div>
 
-</section>
 
-    
-    
+
+    <!-- MENU CATEGORIES -->
+
+<div class="menu-categories">
+
+    <button onclick="showCategory('pizza')">🍕 Pizza</button>
+    <button onclick="showCategory('burger')">🍔 Burgers</button>
+    <button onclick="showCategory('drinks')">🥤 Cold Drinks</button>
+    <button onclick="showCategory('rolls')">🌯 Rolls</button>
+    <button onclick="showCategory('fries')">🍟 Fries</button>
+    <button onclick="showCategory('wings')">🍗 Hot Wings</button>
+    <button onclick="showCategory('desserts')">🍰 Desserts</button>
+
+</div>
+<!-- =========================
+     PIZZA
+========================= -->
+
+<div class="food-category" id="pizza">
+
+    <h2>🍕 Pizza</h2>
+
+    <div class="menu-container">
+
+        <div class="menu-card">
+            <h3>Margherita Pizza</h3>
+            
+            <img 
+            
+  src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=800"
+  alt="Margherita Pizza"
+    style="width: 200px; height: 150px; object-fit: cover;"
+
+>
+
+            <p>Classic pizza with tomato, mozzarella and fresh basil.</p>
+            <div class="price">$9.99</div>
+            <button class="add-cart">Add to Cart 🛒</button>
+
+            <button class="order-button">Order Now 🚀</button>
+        </div>
+
+        <div class="menu-card">
+            <h3>Pepperoni Pizza</h3>
+            <img
+            src="https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8UGVwcGVyb25pJTIwUGl6emF8ZW58MHx8MHx8fDA%3D"
+            alt="Pepperoni Pizza"
+            style="width: 220px; height: 150px; object-fit: cover;">
+        
+            <p>Loaded with spicy pepperoni and melted cheese.</p>
+            <div class="price">$12.99</div>
+            <button class="add-cart">Add to Cart 🛒</button>
+
+
+            <button class="order-button">Order Now 🚀</button>
+        </div>
+
+        <div class="menu-card">
+            <h3>BBQ Chicken Pizza</h3>
+            <img
+            src="https://plus.unsplash.com/premium_photo-1730829140510-68f7cf61d621?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8QkJRJTIwQ2hpY2tlbiUyMFBpenphfGVufDB8fDB8fHww"
+            alt="BBQ Chicken Pizza"
+            style="width: 200px;height:150px;object-fit:cover;"> 
+            <p>Grilled chicken, BBQ sauce and mozzarella cheese.</p>
+            <div class="price">$13.99</div>
+            <button class="add-cart">Add to Cart 🛒</button>
+
+            <button class="order-button">Order Now 🚀</button>
+
+        </div>
+
+        <div class="menu-card">
+            <h3>Cheese Lovers Pizza</h3>
+            <img
+            src="https://images.unsplash.com/photo-1712652080841-9e480a2c43ec?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Q2hlZXNlJTIwUGl6emF8ZW58MHx8MHx8fDA%3D"
+            alt="Cheese Lovers Pizza"
+            style="width: 200px;height:150px;object-fit:cover;">
+            <p>A delicious combination of mozzarella and cheddar.</p>
+            <div class="price">$11.99</div>
+            <button class="add-cart">Add to Cart 🛒</button>
+
+            <button class="order-button">Order Now 🚀</button>
+        
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     BURGERS
+========================= -->
+
+<div class="food-category" id="burger">
+
+    <h2>🍔 Burgers</h2>
+
+    <div class="menu-container">
+
+        <div class="menu-card">
+            <h3>Classic Beef Burger</h3>
+            <img
+            src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Q2xhc3NpYyUyMEJlZWYlMjBCdXJnZXJ8ZW58MHx8MHx8fDA%3D"
+            alt="Classic Beef Burger"
+            style="width: 200px;height:150px;object-fit:cover;">
+            <p>Juicy beef patty with fresh vegetables and special sauce.</p>
+            <div class="price">$8.99</div>
+            <button class="add-cart">Add to Cart 🛒</button>
+
+            <button class="order-button">Order Now 🚀</button>
+        </div>
+
+        <div class="menu-card">
+            <h3>Cheese Burger</h3>
+            <img
+            src="https://plus.unsplash.com/premium_photo-1683619761492-639240d29bb5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Q2hlZXNlJTIwQnVyZ2VyfGVufDB8fDB8fHww"
+            alt="Cheese Burger"
+            style="width: 200px;height:150px;object-fit:cover;">
+            <p>Beef patty covered with melted cheddar cheese.</p>
+            <div class="price">$9.99</div>
+            <button class="add-cart">Add to Cart 🛒</button>
+
+            <button class="order-button">Order Now 🚀</button>
+        </div>
+
+        <div class="menu-card">
+            <h3>Chicken Burger</h3>
+            <img
+            src="https://plus.unsplash.com/premium_photo-1683655058728-415f4f2674bf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2hpY2tlbiUyMGJ1cmdlcnxlbnwwfHwwfHx8MA%3D%3D"
+            alt="Chicken Burger"
+            style="width: 200px;height:150px;object-fit:cover;">
+            <p>Crispy chicken fillet with lettuce and special sauce.</p>
+            <div class="price">$9.49</div>
+            <button class="add-cart">Add to Cart 🛒</button>
+
+            <button class="order-button">Order Now 🚀</button>
+        </div>
+
+        <div class="menu-card">
+            <h3>Double Beef Burger</h3>
+            <img
+            src="https://plus.unsplash.com/premium_photo-1683619761492-639240d29bb5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8RG91YmxlJTIwQmVlZiUyMEJ1cmdlcnxlbnwwfHwwfHx8MA%3D%3D"
+            alt="Double Beef Burger"
+            style="width: 200px;height:150px;object-fit:cover;">
+            <p>Two juicy beef patties with cheese and special sauce.</p>
+            <div class="price">$12.99</div>
+            <button class="add-cart">Add to Cart 🛒</button>
+
+            <button class="order-button">Order Now 🚀</button>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     COLD DRINKS
+========================= -->
+
+<div class="food-category" id="drinks">
+
+    <h2>🥤 Cold Drinks</h2>
+
+    <div class="menu-container">
+
+        <div class="menu-card">
+            <h3>Cold Cola</h3>
+            <p>Ice-cold refreshing cola.</p>
+            <img 
+            src="https://images.unsplash.com/photo-1629186235045-80d4147d90dc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fEljZS1jb2xkJTIwcmVmcmVzaGluZyUyMGNvbGEufGVufDB8fDB8fHww"
+            alt="Cold Cola"
+            style="width: 200px;height:150px;object-fit:cover;">
+            <div class="price">$2.49</div>
+            <button class="add-cart">Add to Cart 🛒</button>
+
+            <button class="order-button">Order Now 🚀</button>
+        </div>
+
+        <div class="menu-card">
+            <h3>Lemonade</h3>
+            <img
+            src="https://images.unsplash.com/photo-1623084921164-4a8c5c37a912?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8TGVtb25hZGV8ZW58MHx8MHx8fDA%3D"
+            alt="Lemonade"
+            style="width: 200px;height:150px;object-fit:cover;">
+            <p>Fresh homemade lemonade with ice.</p>
+            <div class="price">$3.49</div>
+            <button class="add-cart">Add to Cart 🛒</button>
+
+            <button class="order-button">Order Now 🚀</button>
+        </div>
+
+        <div class="menu-card">
+            <h3>Mango Shake</h3>
+            <img
+            src="https://images.unsplash.com/photo-1646821196279-a5a2369196b9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8JTNDaDMlM0VNYW5nbyUyMFNoYWtlfGVufDB8fDB8fHww"
+            alt="Mango Shake"
+            style="width: 200px;height:150px;object-fit:cover;">
+            <p>Creamy mango shake made with fresh mangoes.</p>
+            <div class="price">$4.99</div>
+            <button class="add-cart">Add to Cart 🛒</button>
+
+            <button class="order-button">Order Now 🚀</button>
+        </div>
+
+        <div class="menu-card">
+            <h3>Strawberry Shake</h3>
+            <img
+            src="https://plus.unsplash.com/premium_photo-1726765809820-80c09e800f3b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8JTNDaDMlM0VTdHJhd2JlcnJ5JTIwU2hha2UlM0MlMkZoMyUzRXxlbnwwfHwwfHx8MA%3D%3D"
+            alt="Strawberry Shake"
+            style="width: 200px;height:150px;object-fit:cover;">
+        
+            <p>Fresh strawberries blended with creamy milk.</p>
+            <div class="price">$4.99</div>
+            <button class="add-cart">Add to Cart 🛒</button>
+
+            <button class="order-button">Order Now 🚀</button>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     ROLLS
+========================= -->
+
+<div class="food-category" id="rolls">
+
+    <h2>🌯 Rolls</h2>
+
+    <div class="menu-container">
+
+        <div class="menu-card">
+            <h3>Chicken Roll</h3>
+            <img
+            src="https://images.unsplash.com/photo-1626242108323-cc46c98acdea?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8JTNDaDMlM0VDaGlja2VuJTIwUm9sbCUzQyUyRmgzJTNFfGVufDB8fDB8fHww"
+            alt="Chicken Roll"
+            style="width: 200px;height:150px;object-fit:cover;">
+            <p>Spicy chicken with fresh vegetables and sauce.</p>
+            <div class="price">$5.99</div>
+            <button class="add-cart">Add to Cart 🛒</button>
+
+            <button class="order-button">Order Now 🚀</button>
+        </div>
+
+        <div class="menu-card">
+            <h3>Cheese Roll</h3>
+            <img
+            src="https://images.unsplash.com/photo-1600441397633-28b431bed842?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fCUzQ2gzJTNFQ2hlZXNlJTIwUm9sbCUzQyUyRmgzJTNFfGVufDB8fDB8fHww"
+            alt="Cheese Roll"  
+            style="width:200px;height:150px;object-fit: cover;">
+            <p>Crispy roll filled with melted cheese.</p>
+            <div class="price">$4.99</div>
+            <button class="add-cart">Add to Cart 🛒</button>
+
+            <button class="order-button">Order Now 🚀</button>
+        </div>
+
+        <div class="menu-card">
+            <h3>BBQ Roll</h3>
+            <img
+            src="https://images.unsplash.com/photo-1732772766771-fe1869481683?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8QkJRJTIwUm9sbHxlbnwwfHwwfHx8MA%3D%3D"
+            alt="BBQ Roll"
+            style="width: 200px;height:150px;object-fit:cover;">
+            <p>Chicken, BBQ sauce and fresh vegetables.</p>
+            <div class="price">$6.49</div>
+            <button class="add-cart">Add to Cart 🛒</button>
+
+            <button class="order-button">Order Now 🚀</button>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     FRIES
+========================= -->
+
+<div class="food-category" id="fries">
+
+    <h2>🍟 Fries</h2>
+
+    <div class="menu-container">
+
+        <div class="menu-card">
+            <h3>Classic Fries</h3>
+            <img
+            src="https://images.unsplash.com/photo-1661081090290-9b66fd49d882?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fENsYXNzaWMlMjBGcmllc3xlbnwwfHwwfHx8MA%3D%3D"
+            alt="Classic Fries"
+            style="width: 200px;height:150px;object-fit:cover;">
+            <p>Crispy golden French fries.</p>
+            <div class="price">$3.99</div>
+            <button class="add-cart">Add to Cart 🛒</button>
+
+            <button class="order-button">Order Now 🚀</button>
+        </div>
+
+        <div class="menu-card">
+            <h3>Cheese Fries</h3>
+            <img
+            src="https://plus.unsplash.com/premium_photo-1672498329467-b27e2a97d29b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Q2hlZXNlJTIwRnJpZXN8ZW58MHx8MHx8fDA%3D"
+            alt="Cheese Fries"
+            style="width: 200px;height:150px;object-fit:cover;">    
+            <p>Crispy fries covered with melted cheese.</p>
+            <div class="price">$5.49</div>
+            <button class="add-cart">Add to Cart 🛒</button>
+
+            <button class="order-button">Order Now 🚀</button>
+        </div>
+
+        <div class="menu-card">
+            <h3>Loaded Fries</h3>
+            <img
+            src="https://images.unsplash.com/photo-1733907502048-d13331c4f7de?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8JTNDTG9hZGVkJTIwRnJpZXN8ZW58MHx8MHx8fDA%3D"
+            alt="Loaded Fries"
+            style="width: 200px;height:150px;object-fit:cover;">
+            <p>Fries topped with cheese, chicken and special sauce.</p>
+            <div class="price">$7.99</div>
+            <button class="add-cart">Add to Cart 🛒</button>
+
+            <button class="order-button">Order Now 🚀</button>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     HOT WINGS
+========================= -->
+
+<div class="food-category" id="wings">
+
+    <h2>🍗 Hot Wings</h2>
+
+    <div class="menu-container">
+
+        <div class="menu-card">
+            <h3>Classic Wings</h3>
+            <img
+            src="https://plus.unsplash.com/premium_photo-1672498193267-4f0e8c819bc8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Q2xhc3NpYyUyMFdpbmdzfGVufDB8fDB8fHww"
+            alt="Classic Wings"
+            style="width: 200px;height:150px;object-fit:cover;">
+            <p>Crispy chicken wings with our special seasoning.</p>
+            <div class="price">$7.99</div>
+            <button class="add-cart">Add to Cart 🛒</button>
+
+            <button class="order-button">Order Now 🚀</button>
+        </div>
+
+        <div class="menu-card">
+            <h3>Spicy Wings</h3>
+            <img
+            src="https://plus.unsplash.com/premium_photo-1669742928112-19364a33b530?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8JTNDaDMlM0VTcGljeSUyMFdpbmdzJTNDJTJGaDMlM0V8ZW58MHx8MHx8fDA%3D"
+            alt="Spicy Wings"
+            style="width: 200px;height:150px;object-fit:cover;">
+        
+            <p>Crispy wings covered in spicy sauce.</p>
+            <div class="price">$8.99</div>
+            <button class="add-cart">Add to Cart 🛒</button>
+
+            <button class="order-button">Order Now 🚀</button>
+        </div>
+
+        <div class="menu-card">
+            <h3>BBQ Wings</h3>
+            <img
+            src="https://images.unsplash.com/photo-1608039755401-742074f0548d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8JTNDaDMlM0VCQlElMjBXaW5ncyUzQyUyRmgzJTNFfGVufDB8fDB8fHww"
+            alt="BBQ Wings"
+            style="width: 200px;height:150px;object-fit:cover;">
+            <p>Crispy wings with smoky BBQ sauce.</p>
+            <div class="price">$8.99</div>
+            <button class="add-cart">Add to Cart 🛒</button>
+
+            <button class="order-button">Order Now 🚀</button>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     DESSERTS
+========================= -->
+
+<div class="food-category" id="desserts">
+
+    <h2>🍰 Desserts</h2>
+
+    <div class="menu-container">
+
+        <div class="menu-card">
+            <h3>Chocolate Cake</h3>
+            <img
+            src="https://images.unsplash.com/photo-1709195902163-7eee13e78970?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8JTNDaDMlM0VDaG9jb2xhdGUlMjBDYWtlJTNDJTJGaDMlM0V8ZW58MHx8MHx8fDA%3D"
+            alt="Chocolate Cake"
+            style="width: 200px;height:150px;object-fit:cover;">
+            <p>Rich and creamy chocolate cake.</p>
+            <div class="price">$5.99</div>
+            <button class="add-cart">Add to Cart 🛒</button>
+
+            <button class="order-button">Order Now 🚀</button>
+        </div>
+
+        <div class="menu-card">
+            <h3>Cheesecake</h3>
+            <img
+            src="https://plus.unsplash.com/premium_photo-1726776226061-a23ad8810ed5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8JTNDaDMlM0VDaGVlc2VjYWtlJTNDJTJGaDMlM0V8ZW58MHx8MHx8fDA%3D"
+            alt="Cheesecake"
+            style="width: 200px;height:150px;object-fit:cover;">
+            <p>Classic creamy cheesecake with a delicious topping.</p>
+            <div class="price">$6.49</div>
+            <button class="add-cart">Add to Cart 🛒</button>
+
+            <button class="order-button">Order Now 🚀</button>
+        </div>
+
+        <div class="menu-card">
+            <h3>Ice Cream</h3>
+            <img
+            src="https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aWNlJTIwY3JlYW18ZW58MHx8MHx8fDA%3D"
+            alt="Ice Cream"
+            style="width: 200px;height:150px;object-fit:cover;">
+             <p>Cold and creamy ice cream with your choice of flavor.</p>
+            <div class="price">$4.49</div>
+            <button class="add-cart">Add to Cart 🛒</button>
+            
+            <button class="order-button">Order Now 🚀</button>
+        </div>
+
+        <div class="menu-card">
+            <h3>Brownie</h3>
+            <img
+            src="https://images.unsplash.com/photo-1624353365286-3f8d62daad51?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8QnJvd25pZXxlbnwwfHwwfHx8MA%3D%3D"
+            alt="Brownie"
+            style="width: 200px;height:150px;object-fit:cover;">
+            <p>Warm chocolate brownie with a rich chocolate flavor.</p>
+            <div class="price">$4.99</div>
+            <button class="add-cart">Add to Cart 🛒</button>
+
+            <button class="order-button">Order Now 🚀</button>
+        </div>
+
+    </div>
+
+</div>
+</section>   
 <!-- About Section -->
 <section id="about">
 

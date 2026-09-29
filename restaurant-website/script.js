@@ -1,8 +1,8 @@
 // =========================
-// ORDER MODAL
+// ORDER MODAL 🍽️
 // =========================
 
-const orderButtons = document.querySelectorAll(".menu-card button");
+const orderButtons = document.querySelectorAll(".order-button");
 
 const orderModal = document.getElementById("orderModal");
 const closeModal = document.getElementById("closeModal");
@@ -16,12 +16,12 @@ const customerName = document.getElementById("customerName");
 const quantity = document.getElementById("quantity");
 
 
-// Open popup
+// OPEN ORDER POPUP
 orderButtons.forEach(function(button) {
 
     button.addEventListener("click", function() {
 
-        const card = button.parentElement;
+        const card = button.closest(".menu-card");
 
         const foodName =
             card.querySelector("h3").textContent;
@@ -42,7 +42,7 @@ orderButtons.forEach(function(button) {
 });
 
 
-// Close popup
+// CLOSE ORDER POPUP
 closeModal.addEventListener("click", function() {
 
     orderModal.style.display = "none";
@@ -50,10 +50,10 @@ closeModal.addEventListener("click", function() {
 });
 
 
-// Confirm order
+// CONFIRM ORDER
 confirmOrder.addEventListener("click", function() {
 
-    const name = customerName.value;
+    const name = customerName.value.trim();
     const qty = quantity.value;
 
     if (name === "") {
@@ -66,7 +66,7 @@ confirmOrder.addEventListener("click", function() {
     alert(
         "🎉 Order Confirmed!\n\n" +
         "👤 Name: " + name + "\n" +
-        "🍽️ " + selectedFood.textContent + "\n" +
+        selectedFood.textContent + "\n" +
         "🔢 Quantity: " + qty
     );
 
@@ -76,11 +76,14 @@ confirmOrder.addEventListener("click", function() {
     quantity.value = "1";
 
 });
+
+
 // =========================
-// SHOPPING CART
+// SHOPPING CART 🛒
 // =========================
 
-const cart = [];
+// ONE CART ONLY
+let cart = [];
 
 const addButtons = document.querySelectorAll(".add-cart");
 
@@ -93,36 +96,82 @@ const cartTotal = document.getElementById("cartTotal");
 const cartCount = document.getElementById("cartCount");
 
 
-// Add item
+// =========================
+// ADD TO CART
+// =========================
+
+// =========================
+// ADD TO CART WITH QUANTITY
+// =========================
+
 addButtons.forEach(function(button) {
 
     button.addEventListener("click", function() {
 
-        const card = button.parentElement;
+        const card = button.closest(".menu-card");
 
-        const name = card.querySelector("h3").textContent;
+        const name =
+            card.querySelector("h3").textContent;
 
-        const priceText = card.querySelector(".price").textContent;
+        const priceText =
+            card.querySelector(".price").textContent;
 
-        const price = parseFloat(
-            priceText.replace("$", "")
+        const price =
+            parseFloat(priceText.replace("$", ""));
+
+
+        // Ask quantity
+        let quantity = prompt(
+            "How many " + name + " would you like?"
         );
 
+
+        // Cancel
+        if (quantity === null) {
+            return;
+        }
+
+
+        // Convert to number
+        quantity = parseInt(quantity);
+
+
+        // Check quantity
+        if (isNaN(quantity) || quantity < 1) {
+
+            alert("Please enter a valid quantity.");
+
+            return;
+        }
+
+
+        // Add item
         cart.push({
             name: name,
-            price: price
+            price: price,
+            quantity: quantity
         });
+
 
         updateCart();
 
-        alert(name + " added to cart! 🛒");
+
+        alert(
+            quantity +
+            " × " +
+            name +
+            " added to cart! 🛒"
+        );
 
     });
 
 });
 
 
-// Update cart
+// =========================
+// UPDATE CART
+// =========================
+
 function updateCart() {
 
     cartItems.innerHTML = "";
@@ -143,7 +192,8 @@ function updateCart() {
                 <p>$${item.price.toFixed(2)}</p>
             </div>
 
-            <button class="remove-item"
+            <button
+                class="remove-item"
                 onclick="removeItem(${index})">
                 Remove
             </button>
@@ -153,14 +203,22 @@ function updateCart() {
 
     });
 
+
+    // CART COUNT
     cartCount.textContent = cart.length;
 
+
+    // CART TOTAL
     cartTotal.textContent =
         "Total: $" + total.toFixed(2);
+
 }
 
 
-// Remove item
+// =========================
+// REMOVE ITEM
+// =========================
+
 function removeItem(index) {
 
     cart.splice(index, 1);
@@ -170,7 +228,10 @@ function removeItem(index) {
 }
 
 
-// Open cart
+// =========================
+// OPEN CART
+// =========================
+
 cartButton.addEventListener("click", function() {
 
     cartBox.style.display = "block";
@@ -178,14 +239,19 @@ cartButton.addEventListener("click", function() {
 });
 
 
-// Close cart
+// =========================
+// CLOSE CART
+// =========================
+
 closeCart.addEventListener("click", function() {
 
     cartBox.style.display = "none";
 
 });
+
+
 // =========================
-// CHECKOUT
+// CHECKOUT 🧾
 // =========================
 
 const checkoutButton =
@@ -207,9 +273,13 @@ const checkoutTotal =
     document.getElementById("checkoutTotal");
 
 
-// Open checkout
+// =========================
+// OPEN CHECKOUT
+// =========================
+
 checkoutButton.addEventListener("click", function() {
 
+    // Check cart
     if (cart.length === 0) {
 
         alert("Your cart is empty! 🛒");
@@ -217,9 +287,11 @@ checkoutButton.addEventListener("click", function() {
         return;
     }
 
+
     let itemsText = "";
 
     let total = 0;
+
 
     cart.forEach(function(item) {
 
@@ -230,21 +302,26 @@ checkoutButton.addEventListener("click", function() {
             item.price.toFixed(2) +
             "<br>";
 
-        total += item.price;
+        total = total + item.price;
 
     });
+
 
     checkoutItems.innerHTML = itemsText;
 
     checkoutTotal.textContent =
         "Total: $" + total.toFixed(2);
 
+
     checkoutModal.style.display = "flex";
 
 });
 
 
-// Close checkout
+// =========================
+// CLOSE CHECKOUT
+// =========================
+
 closeCheckout.addEventListener("click", function() {
 
     checkoutModal.style.display = "none";
@@ -252,13 +329,18 @@ closeCheckout.addEventListener("click", function() {
 });
 
 
-// Place order
+// =========================
+// PLACE ORDER
+// =========================
+
 checkoutForm.addEventListener("submit", function(event) {
 
     event.preventDefault();
 
+
     const name =
         document.getElementById("checkoutName").value;
+
 
     alert(
         "🎉 Order Placed Successfully!\n\n" +
@@ -266,19 +348,31 @@ checkoutForm.addEventListener("submit", function(event) {
         "Your order has been received."
     );
 
+
+    // Close checkout
     checkoutModal.style.display = "none";
 
+
+    // Reset form
     checkoutForm.reset();
 
+
+    // Empty cart
     cart.length = 0;
 
+
+    // Update cart
     updateCart();
 
+
+    // Close cart box
     cartBox.style.display = "none";
 
 });
+
+
 // =========================
-// MOBILE NAVBAR
+// MOBILE NAVBAR 📱
 // =========================
 
 const menuToggle =
@@ -293,3 +387,97 @@ menuToggle.addEventListener("click", function() {
     navLinks.classList.toggle("active");
 
 });
+
+
+// =========================
+// MENU CATEGORIES 🍕🍔
+// =========================
+
+function showCategory(category) {
+
+    const categories = document.querySelectorAll(".food-category");
+
+    // Hide all categories
+    categories.forEach(function(item) {
+        item.classList.remove("active");
+    });
+
+    const selectedCategory = document.getElementById(category);
+
+    if (selectedCategory) {
+
+        // Restart animation every time
+        void selectedCategory.offsetWidth;
+
+        selectedCategory.classList.add("active");
+
+        selectedCategory.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    }
+}
+const menuData = {
+    pizza: [
+        {
+            name: "Margherita Pizza",
+            image: "YOUR_PIZZA_IMAGE_URL"
+        },
+        {
+            name: "Pepperoni Pizza",
+            image: "YOUR_PIZZA_IMAGE_URL"
+        },
+        {
+            name: "Cheese Pizza",
+            image: "YOUR_PIZZA_IMAGE_URL"
+        }
+    ],
+
+    burger: [
+        {
+            name: "Classic Burger",
+            image: "YOUR_BURGER_IMAGE_URL"
+        },
+        {
+            name: "Cheese Burger",
+            image: "YOUR_BURGER_IMAGE_URL"
+        }
+    ],
+
+    pasta: [
+        {
+            name: "Italian Pasta",
+            image: "YOUR_PASTA_IMAGE_URL"
+        }
+    ],
+
+    drinks: [
+        {
+            name: "Fresh Juice",
+            image: "YOUR_DRINK_IMAGE_URL"
+        }
+    ]
+};
+
+function showMenu(category) {
+
+    const container = document.getElementById("menu-items");
+
+    container.innerHTML = "";
+
+    menuData[category].forEach((item, index) => {
+
+        const card = document.createElement("div");
+
+        card.className = "menu-item";
+
+        card.style.animationDelay = `${index * 0.3}s`;
+
+        card.innerHTML = `
+            <img src="${item.image}" alt="${item.name}">
+            <h3>${item.name}</h3>
+        `;
+
+        container.appendChild(card);
+    });
+}

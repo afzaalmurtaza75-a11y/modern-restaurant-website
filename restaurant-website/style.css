@@ -117,11 +117,151 @@ nav ul li a:hover {
 /* =========================
    MENU SECTION
 ========================= */
+/* =========================
+   MENU SECTION
+========================= */
 
 #menu {
-    padding: 80px 50px;
-    text-align: center;
-    background-color: #fff8f0;
+  position: relative;
+  padding: 80px 50px;
+  text-align: center;
+
+  background: linear-gradient(
+    135deg,
+    #fff1e6,
+    #ffe4ec,
+    #fff8d6,
+    #fff1e6
+  );
+
+  background-size: 300% 300%;
+  animation: menuBackground 10s ease infinite;
+
+  overflow: hidden;
+}
+.menu-container,
+#menu h2,
+#menu .section-subtitle {
+  position: relative;
+  z-index: 2;
+}
+/* =========================
+   FLYING BUTTERFLIES 🦋
+========================= */
+
+.butterfly {
+  position: absolute;
+  z-index: 1;
+  font-size: 25px;
+  pointer-events: none;
+
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+/* Butterfly 1 */
+.butterfly-1 {
+  left: 8%;
+  top: 30%;
+  animation: flyButterfly1 9s infinite;
+}
+
+/* Butterfly 2 */
+.butterfly-2 {
+  right: 10%;
+  top: 55%;
+  font-size: 20px;
+  animation: flyButterfly2 11s infinite;
+}
+
+/* Butterfly 3 */
+.butterfly-3 {
+  left: 45%;
+  top: 70%;
+  font-size: 18px;
+  animation: flyButterfly3 13s infinite;
+}
+
+
+/* Butterfly movement */
+
+@keyframes flyButterfly1 {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  25% {
+    transform: translate(100px, -50px) rotate(15deg);
+  }
+
+  50% {
+    transform: translate(180px, 30px) rotate(-10deg);
+  }
+
+  75% {
+    transform: translate(80px, 80px) rotate(15deg);
+  }
+
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+
+@keyframes flyButterfly2 {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  25% {
+    transform: translate(-120px, -70px) rotate(-15deg);
+  }
+
+  50% {
+    transform: translate(-200px, 20px) rotate(10deg);
+  }
+
+  75% {
+    transform: translate(-80px, 100px) rotate(-10deg);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+
+@keyframes flyButterfly3 {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  30% {
+    transform: translate(-100px, -80px) rotate(15deg);
+  }
+
+  60% {
+    transform: translate(120px, -40px) rotate(-15deg);
+  }
+
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+/* Animated background */
+@keyframes menuBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Small heading */
@@ -225,8 +365,9 @@ nav ul li a:hover {
 }
 
 /* Card hover */
+
 .menu-card:hover {
-    transform: translateY(-10px);
+    transform: scale(1.05);
 }
 
 /* Button hover */
@@ -982,7 +1123,7 @@ html {
     scroll-behavior: smooth;
 }
 .menu-card {
-    animation: cardAppear 0.8s ease both;
+    animation: none;
 }
 
 .menu-card:nth-child(2) {
@@ -1184,4 +1325,619 @@ footer {
     color: #999;
     font-size: 14px;
     margin: 5px;
+}
+/* =========================
+   COLORFUL MENU CARDS
+========================= */
+
+.menu-card {
+  position: relative;
+  overflow: hidden;
+
+  background: linear-gradient(
+    145deg,
+    #fff0f5,
+    #ffe4ec,
+    #fff8d6
+  );
+
+  border-radius: 22px;
+  padding: 20px;
+
+  border: 2px solid rgba(255, 255, 255, 0.8);
+
+  box-shadow:
+    0 10px 30px rgba(255, 120, 150, 0.18);
+
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+  z-index: 2;
+}
+
+/* Different colors for each card */
+
+.menu-card:nth-child(2) {
+  background: linear-gradient(
+    145deg,
+    #fff0f5,
+    #fce4ff,
+    #e9e7ff
+  );
+}
+
+.menu-card:nth-child(3) {
+  background: linear-gradient(
+    145deg,
+    #fff8d6,
+    #ffe8d1,
+    #ffe4ec
+  );
+}
+
+/* Card hover */
+
+.menu-card:hover {
+  transform: translateY(-12px) scale(1.02);
+
+  box-shadow:
+    0 20px 45px rgba(255, 100, 150, 0.28);
+}
+/* =========================
+   SHINING STARS ✨
+========================= */
+
+.menu-card::before,
+.menu-card::after {
+  content: "✦";
+  position: absolute;
+
+  color: #ffffff;
+  font-size: 22px;
+
+  text-shadow:
+    0 0 5px #fff,
+    0 0 10px #ff8fc1,
+    0 0 20px #ff8fc1;
+
+  animation: starShine 2s ease-in-out infinite;
+
+  pointer-events: none;
+}
+
+/* First star */
+
+.menu-card::before {
+  top: 15px;
+  right: 18px;
+}
+
+/* Second star */
+
+.menu-card::after {
+  bottom: 20px;
+  left: 18px;
+
+  font-size: 15px;
+  animation-delay: 1s;
+}
+
+@keyframes starShine {
+
+  0% {
+    opacity: 0.2;
+    transform: scale(0.6) rotate(0deg);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.3) rotate(45deg);
+  }
+
+  100% {
+    opacity: 0.2;
+    transform: scale(0.6) rotate(90deg);
+  }
+
+}
+/* =========================
+   ABOUT US ✨ STARS
+========================= */
+
+#about {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Stars */
+
+#about::before {
+  content: "✦  ✧  ✨  ✦  ✧  ✦  ✨  ✧  ✦  ✨  ✦  ✧";
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+
+  font-size: 18px;
+  letter-spacing: 35px;
+  line-height: 80px;
+
+  color: #ffffff;
+
+  text-shadow:
+    0 0 5px #fff,
+    0 0 10px #ff8fc1,
+    0 0 20px #ff8fc1;
+
+  animation: aboutStars 3s ease-in-out infinite;
+
+  pointer-events: none;
+}
+
+/* Second group of stars */
+
+#about::after {
+  content: "✨  ✦  ✧  ✨  ✦  ✧  ✦  ✨  ✧  ✦";
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+  width: 100%;
+
+  text-align: center;
+
+  font-size: 14px;
+  letter-spacing: 40px;
+
+  color: #ffffff;
+
+  text-shadow:
+    0 0 5px #fff,
+    0 0 12px #ffd6e7,
+    0 0 20px #ff9fc4;
+
+  animation: aboutStars2 4s ease-in-out infinite;
+
+  pointer-events: none;
+}
+
+
+/* Shining animation */
+
+@keyframes aboutStars {
+
+  0% {
+    opacity: 0.2;
+    transform: translateY(5px);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-5px);
+  }
+
+  100% {
+    opacity: 0.2;
+    transform: translateY(5px);
+  }
+}
+
+
+@keyframes aboutStars2 {
+
+  0% {
+    opacity: 0.3;
+    transform: scale(0.9);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+
+  100% {
+    opacity: 0.3;
+    transform: scale(0.9);
+  }
+}
+/* =========================
+   MENU CATEGORY BUTTONS
+========================= */
+
+.menu-categories {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 40px 0;
+}
+
+.menu-categories button {
+  border: none;
+  padding: 12px 22px;
+  border-radius: 30px;
+
+  background: linear-gradient(135deg, #ff7eb3, #ff758c);
+  color: white;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  box-shadow: 0 5px 15px rgba(255, 100, 140, 0.25);
+
+  transition: 0.3s;
+}
+
+.menu-categories button:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(255, 100, 140, 0.4);
+}
+
+
+/* =========================
+   ANIMATED FOOD CATEGORIES
+========================= */
+
+.food-category {
+    display: none;
+    margin-top: 40px;
+}
+
+.food-category.active {
+    display: block;
+    animation: categoryOpen 0.6s ease;
+}
+
+.food-category h2 {
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   FOOD CARD ORBIT ANIMATION
+========================= */
+
+@keyframes foodOrbit {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translate(120px, 120px)
+            scale(0.3)
+            rotate(180deg);
+    }
+
+    40% {
+        opacity: 1;
+
+        transform:
+            translate(-50px, -30px)
+            scale(1.1)
+            rotate(-20deg);
+    }
+
+    70% {
+
+        transform:
+            translate(30px, 15px)
+            scale(1.03)
+            rotate(10deg);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translate(0, 0)
+            scale(1)
+            rotate(0deg);
+    }
+
+}
+
+
+/* Card 1 */
+.food-category.active .menu-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+/* Card 2 */
+.food-category.active .menu-card:nth-child(2) {
+    animation-delay: 0.25s;
+}
+
+/* Card 3 */
+.food-category.active .menu-card:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+/* Card 4 */
+.food-category.active .menu-card:nth-child(4) {
+    animation-delay: 0.55s;
+}
+
+
+/* Category entrance */
+
+@keyframes categoryOpen {
+
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+/* Food cards come from different directions */
+
+@keyframes foodOrbit {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translate(0, 120px)
+            scale(0.4)
+            rotate(-180deg);
+    }
+
+    50% {
+        opacity: 1;
+
+        transform:
+            translate(0, -20px)
+            scale(1.08)
+            rotate(20deg);
+    }
+
+    75% {
+        transform:
+            translate(0, 10px)
+            scale(0.98)
+            rotate(-5deg);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translate(0, 0)
+            scale(1)
+            rotate(0deg);
+    }
+
+}
+/* =========================
+   CART + ORDER BUTTONS
+========================= */
+
+.menu-card {
+    position: relative;
+}
+
+.menu-card .add-cart,
+.menu-card .order-button {
+    display: inline-block;
+    width: 48%;
+    margin: 5px 1%;
+    padding: 12px 8px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Cart - LEFT */
+.menu-card .add-cart {
+    float: left;
+}
+
+/* Order - RIGHT */
+.menu-card .order-button {
+    float: right;
+}
+/* =========================
+   MENU SECTION
+========================= */
+
+#menu {
+    position: relative;
+    padding: 100px 50px;
+    text-align: center;
+
+    background:
+        radial-gradient(circle at 20% 20%, #ffe0b2, transparent 30%),
+        radial-gradient(circle at 80% 70%, #ffd6e7, transparent 30%),
+        #fff8f0;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   ABOUT SECTION
+========================= */
+
+#about {
+    position: relative;
+    margin-top: 40px;
+    padding: 100px 50px;
+
+    background:
+        linear-gradient(135deg, #eef7ff, #f5eaff, #fff);
+
+    border-top: 5px solid #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+
+    overflow: hidden;
+}
+.menu-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    min-height: 400px;
+}
+
+.menu-item {
+    width: 220px;
+    padding: 15px;
+    background: white;
+    border-radius: 20px;
+    text-align: center;
+
+    opacity: 0;
+    transform: scale(0) rotate(-180deg);
+
+    animation: itemAppear 0.8s ease forwards;
+}
+
+.menu-item img {
+    width: 180px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+@keyframes itemAppear {
+
+    0% {
+        opacity: 0;
+        transform: scale(0) rotate(-180deg);
+    }
+
+    70% {
+        opacity: 1;
+        transform: scale(1.1) rotate(20deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+/* =================================
+   CATEGORY ANIMATION - FINAL
+================================= */
+
+.food-category {
+    display: none !important;
+    margin-top: 40px;
+}
+
+.food-category.active {
+    display: block !important;
+}
+
+/* Cards start hidden */
+.food-category.active .menu-card {
+    animation: restaurantCardIn 1s ease both !important;
+}
+
+/* One by one */
+.food-category.active .menu-card:nth-child(1) {
+    animation-delay: 0.1s !important;
+}
+
+.food-category.active .menu-card:nth-child(2) {
+    animation-delay: 0.3s !important;
+}
+
+.food-category.active .menu-card:nth-child(3) {
+    animation-delay: 0.5s !important;
+}
+
+.food-category.active .menu-card:nth-child(4) {
+    animation-delay: 0.7s !important;
+}
+
+
+/* Card movement */
+@keyframes restaurantCardIn {
+
+    0% {
+        opacity: 0;
+        transform: translate(120px, 100px) scale(0.3) rotate(180deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translate(-30px, -30px) scale(1.1) rotate(-15deg);
+    }
+
+    75% {
+        transform: translate(15px, 10px) scale(1.03) rotate(5deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1) rotate(0deg);
+    }
+}
+/* =================================
+   CONTINUOUS CIRCULAR MENU ANIMATION
+================================= */
+
+.food-category.active .menu-container {
+    position: relative;
+}
+
+.food-category.active .menu-card {
+    animation: circularFood 4s ease-in-out infinite;
+}
+
+/* First card */
+.food-category.active .menu-card:nth-child(1) {
+    animation-delay: 0s;
+}
+
+/* Second card */
+.food-category.active .menu-card:nth-child(2) {
+    animation-delay: 1s;
+}
+
+/* Third card */
+.food-category.active .menu-card:nth-child(3) {
+    animation-delay: 2s;
+}
+
+/* Fourth card */
+.food-category.active .menu-card:nth-child(4) {
+    animation-delay: 3s;
+}
+
+
+@keyframes circularFood {
+
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(80px, -50px) rotate(8deg);
+    }
+
+    50% {
+        transform: translate(0, -90px) rotate(0deg);
+    }
+
+    75% {
+        transform: translate(-80px, -50px) rotate(-8deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
 }
